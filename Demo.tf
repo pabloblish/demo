@@ -50,7 +50,7 @@ resource "aws_autoscaling_group" "bar" {
   launch_configuration = "${aws_launch_configuration.as_conf.name}"
   min_size             = 2
   max_size             = 2
-  desired_capacity     = 1
+  desired_capacity     = 2
   availability_zones   = ["us-west-1a", "us-west-1b"]
   load_balancers           = ["${aws_elb.test.id}"]
 
