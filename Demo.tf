@@ -1,4 +1,3 @@
-# 03-autoscaling.tf
 # ---------------------------------------------------------------------------------------------------------------------
 # CREATE THE CLASIC LOAD BALANCER
 # ---------------------------------------------------------------------------------------------------------------------
@@ -59,25 +58,6 @@ resource "aws_autoscaling_group" "bar" {
   }
 }
 
-# 04-rds.tf.bkp
-# ---------------------------------------------------------------------------------------------------------------------
-# CREATE THE DATABASE TIER
-# ---------------------------------------------------------------------------------------------------------------------
-##resource "aws_db_instance" "default" {
-  ##allocated_storage    = "${var.allocated_storage}"
-  ##storage_type         = "${var.storage_type}"
-  ##engine               = "${var.engine}"
-  ##engine_version       = "${var.engine_version}"
-  ##instance_class       = "${var.instance_class}"
-  ##name                 = "${var.name}"
-  ##username             = "${var.username}"
-  ##password             = "${var.password}"
-  ##port                             = "${var.port}"
-  ##parameter_group_name = "default.mysql5.6"
-  ##vpc_security_group_ids = ["${aws_security_group.database.id}"]
-##}
-
-# 05-security_groups.tf
 # ---------------------------------------------------------------------------------------------------------------------
 # CREATE THE SECURITY GROUP THAT'S APPLIED TO THE EC2 INSTANCE
 # ---------------------------------------------------------------------------------------------------------------------
@@ -181,46 +161,6 @@ resource "aws_security_group" "database" {
     protocol = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
-}
-#  06-variables.tf
-# ---------------------------------------------------------------
-# ENVIRONMENT VARIABLES
-# ---------------------------------------------------------------
-
-variable "allocated_storage" {
-        default = 10
-}
-
-variable "storage_type" {
-        default = "gp2"
-}
-
-variable "engine" {
-        default = "mysql"
-}
-
-variable "engine_version" {
-        default = "5.6.39"
-}
-
-variable "instance_class" {
-        default = "db.t2.micro"
-}
-
-variable "name" {
-        default = "mydb"
-}
-
-variable "username" {
-        default = "admin"
-}
-
-variable "password" {
-        default = "t3mp0ral"
-}
-
-variable "port" {
-        default = 3306
 }
 
 # ---------------------------------------------------------------
