@@ -6,11 +6,11 @@ variable "server_port" {
   default = 80
 }
 variable "vpc_id" {
-        default = "vpc-3eff8559"
+        default = "ami-b70554c8"
 }
 
 variable "image_id" {
-  default = "ami-demo12345"
+  default = "ami-b70554c8"
 }
 
 variable "instance_type" {
