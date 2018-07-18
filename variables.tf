@@ -10,7 +10,7 @@ variable "vpc_id" {
 }
 
 variable "image_id" {
-  default = "ami-25110f45"
+  default = "ami-demo12345"
 }
 
 variable "instance_type" {
