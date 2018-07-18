@@ -67,8 +67,8 @@ resource "aws_autoscaling_group" "bar" {
 resource "aws_security_group" "load_balancer" {
   name        = "Load_Balancer"
   description = "Allow HTTP inbound traffic"
-  #vpc_id      = "${var.vpc_id}"
-  vpc_id      = "${aws_vpc.vpc.id}"
+  vpc_id      = "${var.vpc_id}"
+  #vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
     from_port   = 80
@@ -100,8 +100,8 @@ resource "aws_security_group" "load_balancer" {
 # --------------------------------------------------------------------
 resource "aws_security_group" "web" {
   name = "terraform-web"
-  #vpc_id = "${var.vpc_id}"
-  vpc_id      = "${aws_vpc.vpc.id}"
+  vpc_id = "${var.vpc_id}"
+  #vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
     from_port = "22"
@@ -125,8 +125,8 @@ resource "aws_security_group" "web" {
 # ----------------------------------------------------------------------
 resource "aws_security_group" "application" {
   name = "terraform-application"
-  #vpc_id = "${var.vpc_id}"
-  vpc_id      = "${aws_vpc.vpc.id}"
+  vpc_id = "${var.vpc_id}"
+  #vpc_id      = "${aws_vpc.vpc.id}"
 
   ingress {
     from_port = "9043"
@@ -152,8 +152,8 @@ resource "aws_security_group" "application" {
 # ----------------------------------------------------------------
 resource "aws_security_group" "database" {
   name = "terraform-db-instance"
-  #vpc_id = "${var.vpc_id}"
-  vpc_id      = "${aws_vpc.vpc.id}"
+  vpc_id = "${var.vpc_id}"
+  #vpc_id      = "${aws_vpc.vpc.id}"
   ingress {
     from_port = "3306"
     to_port = "3306"
