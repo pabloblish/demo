@@ -21,7 +21,7 @@ resource "aws_autoscaling_group" "bar" {
   min_size             = 1
   max_size             = 3
   desired_capacity     = 1
-  availability_zones   = ["us-west-1a", "us-west-1b"]
+  availability_zones   = ["us-west-1a", "us-west-1b", "us-east-1a", "us-east-1b"]
   load_balancers           = ["${aws_elb.test.id}"]
 
   lifecycle {
