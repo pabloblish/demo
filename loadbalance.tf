@@ -4,8 +4,7 @@
 
 resource "aws_elb" "test" {
   name               = "foobar-terraform-elb"
-  #availability_zones = ["us-west-1a", "us-west-1b"]
-  availability_zones   = ["${var.region}"]
+  availability_zones   = ["${var.region}a", "${var.region}b"]
   security_groups        = ["${aws_security_group.load_balancer.id}"]
 
   listener {
