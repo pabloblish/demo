@@ -7,7 +7,8 @@ variable "server_port" {
 }
 
 variable "image_id" {
-  default = "ami-25110f45"
+  #default = "ami-25110f45"
+  default = "ami-b70554c8"
 }
 
 variable "instance_type" {
