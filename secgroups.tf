@@ -96,13 +96,21 @@ resource "aws_security_group" "database" {
   name = "terraform-db-instance"
   #vpc_id = "${var.vpc_id}"
   vpc_id      = "${aws_vpc.vpc.id}"
+  
   ingress {
-    from_port = "9043"
-    to_port = "9043"
+    from_port = "3306"
+    to_port = "3306"
     protocol = "tcp"
     security_groups = ["${aws_security_group.application.id}"]
   }
-
+  
+ingress {
+    from_port = "22"
+    to_port = "22"
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
   egress {
     from_port = "0"
     to_port = "0"
