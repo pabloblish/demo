@@ -6,7 +6,7 @@ variable "server_port" {
   default = 80
 }
 variable "vpc_id" {
-        default = "ami-b70554c8"
+        default = "vpc-854758fe"
 }
 
 variable "image_id" {
